@@ -1,5 +1,5 @@
 {
-  "name": "sass-tool",
+  "name": "sass-tool-light",
   "version": "0.0.1-beta",
   "description": "A library that provides basic methods for sass",
   "main": "index.js",

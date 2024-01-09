@@ -1,7 +1,7 @@
 
 ## A Lightweight Sass Tool
 
-[sass-tool] is a library of [Sass] mixins and functions that are designed to make
+[sass-tool-light] is a library of [Sass] mixins and functions that are designed to make
 you a more efficient style sheet author.
 
 It is…
@@ -16,12 +16,12 @@ It is…
 
 ## Installation
  ```bash
-    npm install --save sass-tool
+    npm install --save ssass-tool-light
     ```
-1. Import sass-tool into your Sass files:
+1. Import sass-tool-light into your Sass files:
 
     ```scss
-    @import "sass-tool";
+    @import "sass-tool-light";
     ```
 
 
