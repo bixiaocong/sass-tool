@@ -1,6 +1,6 @@
 {
   "name": "sass-tool",
-  "version": "bata-0.0.1",
+  "version": "0.0.1-beta",
   "description": "A library that provides basic methods for sass",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,5 @@
   },
   "style": "core/main.scss",
   "author": "congcong.bi",
-  "license": "ISC",
+  "license": "ISC"
 }
