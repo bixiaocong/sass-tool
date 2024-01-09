@@ -9,6 +9,10 @@
   "keywords": [
     "sass"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bixiaocong/sass-tool.git"
+  },
   "style": "core/main.scss",
   "author": "congcong.bi",
   "license": "ISC"
