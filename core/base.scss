@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+// 基本样式
+
+
+// 行高
+@mixin height($height: null, $os: true) {
+	// 是否使用 os
+	height: use($height);
+	line-height: use($height);
+	@if $os {
+		#{$g-android} & {
+			line-height: use($height * 1.1);
+		}
+	}
+}
+
+
+// 行内块元素
+@mixin inline-block($vertical-align: null) {
+	display: inline-block;
+	vertical-align: $vertical-align;
+}
+
+
+// 文字超出省略
+@mixin text-overflow($line: 1) {
+	overflow : hidden;
+	text-overflow: ellipsis;
+	@if $line == 1 {
+		white-space: nowrap;
+	} @else {
+		display: -webkit-box;
+		-webkit-line-clamp: $line;
+		-webkit-box-orient: vertical;
+	}
+}
+
+

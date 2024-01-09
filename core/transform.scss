@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+// 常用变形
+
+
+// 缩放
+@mixin scale($x: 1) {
+	transform: scale($x);
+}
+// 缩放
+@mixin scaleX($x: 1) {
+	transform: scaleX($x);
+}
+// 缩放
+@mixin scaleY($x: 1) {
+	transform: scaleY($x);
+}
+// 缩放
+@mixin scale3d($x: 1, $y: 1, $z: 1) {
+	transform: scale3d($x, $y, $z);
+}
+
+
+// 旋转
+@mixin rotate($x: 0, $unit: 1deg) {
+	@if unit($x) != 'deg' {
+		$x: $x * 1deg;
+	}
+	transform: rotate($x);
+}
+// 旋转
+@mixin rotateX($x: 0, $unit: 1deg) {
+	@if unit($x) != 'deg' {
+		$x: $x * 1deg;
+	}
+	transform: rotateX($x);
+}
+// 旋转
+@mixin rotateY($x: 0, $unit: 1deg) {
+	@if unit($x) != 'deg' {
+		$x: $x * 1deg;
+	}
+	transform: rotateY($x);
+}
+// 旋转
+@mixin rotate3d($x, $y, $z, $deg) {
+	// x, y, z 为0到1之间的矢量
+	// deg 为旋转角度
+	transform: rotate3d($x, $y, $z, $deg);
+}
+
+
+// 拉伸
+@mixin skew($x: 0) {
+	transform: skew($x);
+}
+// 拉伸
+@mixin skewX($x: 0) {
+	transform: skewX($x);
+}
+// 拉伸
+@mixin skewY($x: 0) {
+	transform: skewY($x);
+}
+
+
+// 位移
+@mixin translate3d($x: 0, $y: 0, $z: 0) {
+	transform: translate3d(use($x), use($y), use($z));
+}
+// 位移
+@mixin translateX($x: 0) {
+	transform: translateX(use($x));
+}
+// 位移
+@mixin translateY($y:0) {
+	transform: translateY(use($y));
+}
+
+
+// 简化位移
+@mixin x($x: 0) {
+	@include translateX($x);
+}
+// 简化位移
+@mixin y($y: 0) {
+	@include translateY($y);
+}
+// 简化位移
+@mixin t3d($x: 0, $y: 0, $z: 0) {
+	@include translate3d($x, $y, $z);
+}
+

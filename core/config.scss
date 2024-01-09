@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+// 配置文件
+
+// 设计图宽度
+$global-width: 1080 !default;
+
+// 全局单位
+$global-unit: 'rem' !default; // normal(传啥返回啥) | rem | px | percent(%)
+
+// rem比例, document.documentElement.style.fontSize = document.documentElement.offsetWidth / 10 + 'px';
+$global-rem-size: 10 !default;
+
+// px尺寸
+$global-px-size: 320 !default;
+
+// root class
+$g-android: '.g-android';
+$g-ios: '.g-ios';
+$g-wx: '.g-wx';

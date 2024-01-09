@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+// 常用居中
+
+
+// 绝对定位居中, absolute + margin
+@mixin center-absolute($width: null, $height: $width, $top: 50%, $left: 50%) {
+	position: absolute;
+	top: use($top);
+	left: use($left);
+	width: use($width);
+	height: use($height);
+	@if type-of($height) == 'number' {
+		margin-top: - use($height) / 2;
+	}
+	@if type-of($width) == 'number' {
+		margin-left: - use($width) / 2;
+	}
+}
+
+// 固定定位居中, fixed + margin
+@mixin center-fixed($width: null, $height: $width, $top: 50%, $left: 50%) {
+	position: fixed;
+	top: use($top);
+	left: use($left);
+	width: use($width);
+	height: use($height);
+	@if type-of($height) == 'number' {
+		margin-top: use($height) / 2;
+	}
+	@if type-of($width) == 'number' {
+		margin-left: use($width) / 2;
+	}
+}
+
+// 外间距居中, margin
+@mixin center-margin($margin-top: 0, $margin-bottom: $margin-top) {
+	margin: use($margin-top) auto use($margin-bottom);
+}
+
+// 盒内元素居中, webkit-box
+@mixin center-box() {
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+}
+
+// 伸缩盒内元素居中, flex
+@mixin center-flex() {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+
+
+
+

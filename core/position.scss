@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+// 常用定位
+
+
+// 设置位置和宽高, 传null不设置
+@mixin pos($top: null, $left: null, $right: null, $bottom: null, $width: null, $height: null) {
+	@if type-of($top) == 'string' {
+		$str: $top;
+		@if str-index($str, "t") {
+			$top: 0;
+		} @else {
+			$top: null;
+		}
+		@if str-index($str, "l") {
+			$left: 0;
+		}
+		@if str-index($str, "b") {
+			$bottom: 0;
+		}
+		@if str-index($str, "r") {
+			$right: 0;
+		}
+		@if str-index($str, "w") {
+			$width: 100%;
+		}
+		@if str-index($str, "h") {
+			$height: 100%;
+		}
+	}
+	top: use($top);
+	left: use($left);
+	right: use($right);
+	bottom: use($bottom);
+	width: use($width);
+	height: use($height);
+}
+
+
+// 绝对定位
+@mixin absolute($top: null, $left: null, $right: null, $bottom: null, $width: null, $height: null) {
+	position: absolute;
+	@include pos($top, $left, $right, $bottom, $width, $height);
+}
+// 相对定位
+@mixin relative($top: null, $left: null, $right: null, $bottom: null, $width: null, $height: null) {
+	position: relative;
+	@include pos($top, $left, $right, $bottom, $width, $height);
+}
+// 固定定位
+@mixin fixed($top: null, $left: null, $right: null, $bottom: null, $width: null, $height: null) {
+	position: fixed;
+	@include pos($top, $left, $right, $bottom, $width, $height);
+}
+
+
+// 常用
+@mixin atl($top: 0, $left: 0) {
+	@include absolute($top, $left);
+}
+// 常用
+@mixin atr($top: 0, $right: 0) {
+	@include absolute($top, null, $right);
+}
+// 常用
+@mixin abl($bottom: 0, $left: 0) {
+	@include absolute(null, $left, null, $bottom);
+}
+// 常用
+@mixin abr($bottom: 0, $right: 0) {
+	@include absolute(null, null, $right, $bottom);
+}
+// 常用
+@mixin fbr($bottom: 0, $right: 0) {
+	@include fixed(null, null, $right, $bottom);
+}
+// 常用
+@mixin ftl($top: 0, $left: 0) {
+	@include fixed($top, $left);
+}
+// 常用
+@mixin ftr($top: 0, $right: 0) {
+	@include fixed($top, null, $right);
+}
+// 常用
+@mixin fbl($bottom: 0, $left: 0) {
+	@include fixed(null, $left, null, $bottom);
+}
+// 常用
+@mixin fbr($bottom: 0, $right: 0) {
+	@include fixed(null, null, $right, $bottom);
+}
+
+
+// 宽高
+@mixin wh($width: null, $height: null) {
+	width: use($width);
+	height: use($height);
+}
+// 正方形
+@mixin square($width: 100%, $height: $width) {
+	width: use($width);
+	height: use($height);
+}
+
+
+// 铺满
+@mixin full() {
+	@include square();
+}
+// 铺满(绝对定位)
+@mixin afull() {
+	@include absolute(0, 0, 0, 0, 100%, 100%);
+}
+// 铺满(固定定位)
+@mixin ffull() {
+	@include fixed(0, 0, 0, 0, 100%, 100%);
+}
+

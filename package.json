@@ -1,0 +1,15 @@
+{
+  "name": "sass-tool",
+  "version": "1.0.0",
+  "description": "A library that provides basic methods for sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sass"
+  ],
+  "style": "core/main.scss",
+  "author": "congcong.bi",
+  "license": "ISC"
+}

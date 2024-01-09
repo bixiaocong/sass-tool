@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+// 对外主文件
+
+
+@import 'config';
+@import 'base';
+@import 'position';
+@import 'center';
+@import 'transform';
+@import 'reset';
+
+
+// 使用单位
+@function use($num) {
+	@if type-of($num) != 'number' {
+		// 不是数字, 返回原值
+		@return $num;
+	}
+	@if unit($num) != '' {
+		// 带单位, 返回原值
+		@return $num;
+	} @else {
+		// 不带单位
+		@if function-exists($global-unit) {
+			// 有方法, 返回处理后的值
+			@return $num / $global-width * $global-rem-size * 1rem;
+		} @else {
+			// 没有方法, 报错
+			@return 'Error (use): unit ' + $global-unit + ' do not exist';
+		}
+	}
+}
+
+// 正常单位, 传什么返回什么
+@function normal($num) {
+	@return $num;
+}
+
+// rem单位
+@function rem($num, $width: $global-width) {
+	@if $num == 0 {
+		@return 0;
+	}
+	@if $width == 0 {
+		@return 0;
+	}
+	@return $num / $width * $global-rem-size * 1rem;
+}
+
+// px单位
+@function px($num, $width: $global-width) {
+	@if $num == 0 {
+		@return 0;
+	}
+	@if $width == 0 {
+		@return 0;
+	}
+	@return $num / $width * $global-px-size * 1px;
+}
+
+// 百分比单位
+@function percent($num, $width: $global-width) {
+	@if $num == 0 {
+		@return 0;
+	}
+	@if $width == 0 {
+		@return 0;
+	}
+	@return $num / $width * 100%;
+}
+
+
