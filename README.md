@@ -6,7 +6,7 @@ you a more efficient style sheet author.
 
 It is…
 
-- Dependency-free: Bourbon is pure Sass.
+- Dependency-free: It is pure Sass.
 - Human-readable: We aim for clarity over brevity.
 - Lightweight: Zero output post-install and has no visual opinion.
 
